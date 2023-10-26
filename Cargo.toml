@@ -1,0 +1,28 @@
+[package]
+name = "final_code"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mpi = { version = "0.6", default-features = false }
+byteorder = "1.4"
+csv = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rayon = "1.5"
+jemallocator = "0.5.4"
+memmap = "0.7"
+toml = "0.8.1"
+rdst = "0.20.11"
+nalgebra = "0.32.3"
+packed_simd = "0.3.9"
+plotters = "0.3.0"
+criterion = "0.5.1"
+rand = "0.8.5"
+
+
+[lib]
+name = "normalisation"
+path = "src/lib.rs"

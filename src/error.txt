@@ -1,0 +1,75 @@
+warning: unreachable statement
+  --> src/main.rs:35:5
+   |
+32 |     return;
+   |     ------ any code following this expression is unreachable
+...
+35 |     let max_number = store_lines.iter().max();
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unreachable statement
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: unused import: `rayon::prelude`
+  --> src/idat_processing.rs:21:5
+   |
+21 | use rayon::prelude::*;
+   |     ^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: variable `processed_data` is assigned to, but never used
+  --> src/main.rs:14:9
+   |
+14 |     let processed_data: Vec<Vec<(f64, f64)>>;
+   |         ^^^^^^^^^^^^^^
+   |
+   = note: consider using `_processed_data` instead
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `store_red`
+  --> src/main.rs:15:13
+   |
+15 |     let mut store_red: Vec<Vec<f64>> = Vec::new();
+   |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_store_red`
+
+warning: unused variable: `store_grn`
+  --> src/main.rs:16:13
+   |
+16 |     let mut store_grn: Vec<Vec<f64>> = Vec::new();
+   |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_store_grn`
+
+warning: value assigned to `processed_data` is never read
+  --> src/main.rs:23:13
+   |
+23 |             processed_data = data;
+   |             ^^^^^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `max`
+  --> src/main.rs:38:15
+   |
+38 |         Some(&max) => {
+   |               ^^^ help: if this is intentional, prefix it with an underscore: `_max`
+
+warning: variable does not need to be mutable
+  --> src/main.rs:15:9
+   |
+15 |     let mut store_red: Vec<Vec<f64>> = Vec::new();
+   |         ----^^^^^^^^^
+   |         |
+   |         help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+  --> src/main.rs:16:9
+   |
+16 |     let mut store_grn: Vec<Vec<f64>> = Vec::new();
+   |         ----^^^^^^^^^
+   |         |
+   |         help: remove this `mut`
+
+warning: `final_code` (bin "final_code") generated 9 warnings (run `cargo fix --bin "final_code"` to apply 5 suggestions)
+    Finished release [optimized] target(s) in 1.22s
